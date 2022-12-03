@@ -1,0 +1,148 @@
+@import '../../../scss/mixin';
+@import '../../../scss/variables.scss';
+
+.profile-container{
+    width: 100%;
+    height: auto;
+    padding: .5rem 0rem;
+    background-color: white;
+    &-content{
+        width: 100%;
+        height: auto;
+        padding: .5rem 0rem;
+        display: flex;
+        // background-color: aqua;
+        
+        &-left{
+            width: 30%;
+            height: 25vh;
+            // background-color: lightcoral;
+            @include respond(phone){
+               width: 40%;
+            }
+            &>img{
+                width: 40%;
+                height: 25vh;
+                float: right;
+                margin-right: 1rem;
+                border-radius: 50%;
+                @include respond(phone){
+                 float: left;
+                 margin-left: .5rem;
+                    width: 90%;
+                }
+
+            }
+        }
+        &-right{
+            width: 60%;
+            height: 25vh;
+            margin-left: .5rem;
+            display: flex;
+            flex-direction: column;
+            @include respond(phone){
+                width: 100%;
+                // background-color: lightgreen;
+
+            }
+            &>h1{
+                margin-top: 1rem;
+                color: $headingcolor;
+            }
+            &>p{
+                margin-top: 1rem;
+                font-size: 1.3rem;
+                color: $textcolor;
+            }
+            &>span{
+                font-size: 1.3rem;
+                color: $textcolor;
+            }
+            &-up{
+                width: 13%;
+                margin-top: 1.5rem;
+                text-decoration: none;
+                font-size: 1.3rem;
+                padding: .5rem 1.5rem;
+                border: 1px solid $textcolor;
+                color: $textcolor;
+                border-radius: .5rem;
+                @include respond(phone){
+                //     // font-size: 1rem;
+                    width: 30%;
+                }
+            }
+            &-up:hover{
+                background-color: $blue;
+                color: white;
+                border: none;
+            }
+        }
+    }
+}
+
+.profile-post-container{
+    width: 100%;
+    height: auto;
+    background-color: $mainbodycolor;
+    padding: 1rem 0rem;
+    &>h1{
+        color: $headingcolor;
+        margin-left: 6rem;
+        margin-top:2rem;
+        @include respond(phone){
+         margin-left: 3rem;   
+        }
+    }
+    &-content{
+        width: 90%;
+        height:20vh;
+        margin-top: 1rem;
+        margin-left:5%;
+        border-radius: .5rem;
+        display: flex;
+        // justify-content: center;
+        background-color: white;
+        &-topic{
+            width: 10%;
+            text-align: center;
+            @include respond(phone){
+            width: 25%;
+            }
+            &>h2{
+                margin-top: 1.5rem;
+            }
+            &>p{
+                margin-top: 2rem;
+                width: 20%;
+                color: $headingcolor;
+                font-weight: bold;
+                font-size: 1.5rem;
+                border-radius: .5rem;
+                margin-left: 3.5rem;
+                padding:1rem 1.5rem;
+                background-color: $bodybgcolor;
+
+            }
+        }
+        &-topicname{
+            width: 60%;
+            padding: .5rem .5rem;
+            // background-color: lightcoral;
+            &>h1{
+            color: $headingcolor;
+            margin-top: 1rem;
+            }
+            &>p{
+                margin-top: 2rem;
+                font-size: 1.4rem;
+                // color: $textcolor;
+            }
+            &>span{
+                margin-top: .5rem;
+                font-size: 1.4rem;
+            }
+
+        }
+    }
+}

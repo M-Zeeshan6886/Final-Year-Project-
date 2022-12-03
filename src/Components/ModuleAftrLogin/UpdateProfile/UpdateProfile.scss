@@ -1,0 +1,80 @@
+@import '../../../scss/mixin';
+@import '../../../scss/variables.scss';
+
+.updateprofile-container{
+    width: 100%;
+    height: auto;
+    padding: 3rem 0rem;
+    display: flex;
+    justify-content: center;
+    background-color: $mainbodycolor;
+    &-content{
+        width: 70%;
+        height: 50vh;
+        padding: 1rem 1rem;
+       border-radius:.5rem;
+        background-color: white;
+      
+        @include respond(tab-port){
+            height: auto;
+            width: 90%;
+        }
+
+       &>h1{
+        font-size: 3rem;
+        color: $Skyblue;
+       }
+       &>h3{
+        font-size: 2rem;
+        color: $Skyblue;
+       }
+       &-details{
+        margin-top: 1rem;
+           display: flex;
+           justify-content: space-between;
+           // background-color: red;
+           
+           &-data{
+
+            &>p{
+
+                height: auto;
+                font-size:2rem ;
+                line-height:5vh;
+            }
+            // background-color: aqua;
+            &-name{
+                margin-top: 2rem;
+                text-decoration: none;
+                font-size: 1.5rem;
+                border-radius: .5rem;
+                color: white;
+                background-color: $Skyblue;
+                padding: .5rem 1.5rem;
+                margin-bottom: 1rem; 
+            }
+            &-name:hover{
+                color: $Skyblue;
+                border: 1px solid $Skyblue;
+                background: none;
+            }
+           }
+
+           &-editpic{
+
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+    
+            &>img{
+                width: 90%;
+                border-radius: .5rem;
+            }
+            &>input{
+                margin-top: 1rem;
+                // border: 1px solid $textcolor;
+            }
+        }
+       }
+    }
+}

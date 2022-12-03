@@ -1,0 +1,212 @@
+@import "../../scss/mixin";
+@import '../../scss/variables.scss';
+.topbar {
+  width: 100%;
+  &-container {
+    padding: 0rem 2rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 10px  gray;
+    padding: 1rem 1.5rem;
+    justify-content: space-between;
+    background-color: white;
+    @include respond(tab-port) {
+      display: none;
+    }
+
+    &-logo {
+      width: 20%;
+      display: flex;
+      align-items: center;
+
+      & > img {
+        height: 5rem;
+        width: 5rem;
+        margin-right: 0.56rem;
+      }
+    }
+    .logo-text {
+      color: $Skyblue;
+    }
+    &-menu {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //   background-color: green;
+      & > * {
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          margin-right: 3rem;
+        }
+      }
+    
+    }
+       &-btn {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include respond(tab-port) {
+        width: 100%;
+      }
+
+      &-first {
+        background-color: $blue;
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding: .5rem 1.5rem;
+        border: 1px solid $blue;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        border-radius: 0.5rem;
+
+        &:hover {
+          background-color: white;
+          color: $blue;
+        }
+      }
+      &-second {
+        background-color: white;
+        color: $blue;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding: .5rem 1.5rem;
+        border: 1px solid $blue;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        border-radius: 0.5rem;
+
+        &:hover {
+          background-color: $blue;
+          color: white;
+        }
+      }
+
+      & > * {
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.link-items{
+  font-size:1.5rem;
+  text-decoration:none;
+  color:black;
+}
+.link-items:hover{
+  text-decoration: underline;
+  // background-color: $Skyblue;
+  // padding: .5rem .5rem;
+}
+
+
+// Mobile Responsive
+.responsive-topbar {
+  display: none;
+  z-index: 1000000;
+  @include respond(tab-port) {
+    display: block;
+    transition: 5s ease;
+    width: 100%;
+    transition: all 0.5s;
+
+    &-top {
+      z-index: inherit;
+      position: fixed;
+      width: 100%;
+      // padding: 1rem 1rem;
+      &-hamburger {
+        margin-top: 1rem;
+        margin-right: 1rem;
+        border-radius: 1rem;
+        // align-items: center;
+        color: black;
+        margin-right: 1rem;
+        font-size: 3rem;
+        background-color: $Skyblue;
+        
+        cursor: pointer;
+      }
+      &-logo {
+        // background-color: #fff;
+        display: flex;
+        align-items: center;
+        & > img {
+          padding-right:1rem;
+          margin-top: 0.5rem;
+          height: 5rem;
+        }
+        &>h1{
+          color: $Skyblue;
+          //  color:#099BE8;
+        }
+      }
+    }
+  }
+}
+
+//  Topbar Container
+
+.responsive-topbar-container {
+  padding: .5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 1px 1px 10px 1px;
+  width: 100%;
+}
+
+.contact-active-none {
+  display: none;
+}
+
+.contact-active {
+  display: block;
+  background-color: $bodybgcolor;
+  & > h1 {
+    color: white;
+  }
+}
+
+.responsive-menu-link {
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    flex-direction: column;
+    &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      & > * {
+        font-size: 1.5rem;
+        text-decoration: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: white;
+        transition: 0.3s ease-in-out;
+        &:not(:first-child) {
+          margin-top: 2rem;
+        }
+        &:hover {
+          border-bottom: 1px solid white;
+        }
+      }
+    }
+  }
+}

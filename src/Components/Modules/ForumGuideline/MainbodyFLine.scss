@@ -1,0 +1,58 @@
+@import '../../../scss/mixin';
+@import '../../../scss/variables.scss';
+
+.FLine-container{
+    width: 100%;
+    height: auto;
+    padding: 2rem 0rem;
+    display: flex;
+    background-color: $mainbodycolor;
+
+    &-content-left{
+        width: 25%;
+        height: 120vh;
+        // padding: 1rem;
+        margin-left: 2rem;
+        border-radius: .5rem;   
+        background-color: white;
+        @include  respond(phone){
+            display: none;
+        }
+    }
+
+    &-content-right{
+        width: 70%;
+        height: auto;
+        padding: 1rem;
+        margin-left: .5rem;
+        margin-top: 2rem;
+        // background-color: lightcoral;
+        @include respond(phone){
+            width: 100%;
+        }
+        &>h1{
+            font-size: 3rem;
+            color: $headingcolor;
+        }
+        &>h2{
+            color: $headingcolor;
+            font-size: 2rem;
+            margin-top: 1rem;
+        }
+        &>p{
+            color: $textcolor;
+            margin-top: .7rem;
+            font-size: 1.5rem;
+            text-align: justify;
+            &>b{
+              list-style:circle ;
+            }
+        }
+        &>li{
+            color: $textcolor;
+            font-size: 1.5rem;
+            text-align: justify;
+        }
+
+    }
+}

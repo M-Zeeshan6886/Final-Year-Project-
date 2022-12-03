@@ -1,0 +1,51 @@
+@import '../../scss/mixin';
+@import '../../scss/variables.scss';
+
+.StartDiscussion-container{
+    width:100%;
+    height:auto;
+    padding: .5rem 0rem;
+    background-color:$mainbodycolor;
+    @include respond(tab-port){
+        width: 100%;
+    }
+    &-content{
+        width: 100%;
+        height: auto;
+        padding: 2rem 0rem;
+        display: flex;
+        align-items: center;
+
+        // background-color: red;
+        &>p{
+            margin-left: 8rem;
+            color: $textcolor;
+            font-size: 1.5rem;
+            @include respond(tab-port){
+               margin-left: 3rem;
+            }
+        }
+        &>select{
+            margin-left: 1rem;
+            padding: .7rem ;
+            border: 1px solid $textcolor;
+            border-radius: .5rem;
+            cursor: pointer;
+            // background-color: $textcolor;
+            &:focus{
+                border: none;
+            }
+        }
+        &>button{
+            background-color: $blue;
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: .5rem;
+            margin-left: 1rem;
+        }
+        &>button:hover{
+            background-color: $headingcolor;
+        }
+    }
+}

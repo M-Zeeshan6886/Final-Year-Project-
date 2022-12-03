@@ -1,0 +1,131 @@
+@import '../../scss/mixin';
+@import '../../scss/variables.scss';
+.SignUp {
+  height: 100vh;
+  &-container {
+    display: flex;
+    &-left {
+      width: 43%;
+      background-image: linear-gradient(
+          to right bottom,
+          rgba(60, 80, 151, 0.858),
+          rgba(60, 80, 151, 0.858)
+        ),
+        url(../assest/psyco2.png);
+      // background-position: center;
+      object-fit: cover;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include respond(phone) {
+        display: none;
+      }
+      &-content {
+        width: 40rem;
+        & > h1 {
+          color: white;
+          text-align: center;
+          font-size: 3.2rem;
+          font-weight: 700;
+          text-shadow: 2px 2px 10px rgb(186, 185, 185);
+        }
+      }
+    }
+    &-right {
+      width: 57%;
+      height: 87.6vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  // background-color: aqua;
+
+      @include respond(phone) {
+        width: 100%;
+      }
+      padding: 4rem 4rem;
+      &-form {
+        &-SignUp {
+          width: 75%;
+          margin: auto;
+
+          @include respond(phone) {
+            width: 90%;
+          }
+
+          &-checkbox {
+            display: flex;
+            margin: 1.5rem 0rem;
+            & > input {
+              accent-color: blue;
+              margin-right: 1rem;
+              border: none;
+              outline: none;
+              background: none;
+            }
+          }
+          &-btn {
+            @include respond(phone) {
+              padding-bottom: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//  Sign Up Page left
+
+.signleft {
+  &-content {
+    width: 77%;
+    & > h1 {
+      // color: white;
+      color: red;
+      text-align: center;
+      font-size: 3.2rem;
+      font-weight: 800;
+    }
+  }
+}
+.login-txt{
+  color: white;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+.login-btn{
+  color: gray;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border:1px solid gray;
+  border-radius: .5rem;
+  // margin-bottom: 2rem;
+  padding: .5rem 1rem;
+  // background-color: lightgrey;
+  // text-shadow: 5px 5px 3px rgb(186, 185, 185);
+}
+.login-btn:hover{
+background-color: $blue;
+color:white;
+border: none;
+  // text-decoration: underline;
+}
+#btn3{
+  align-items: center;
+  // margin-top: 1rem;
+  font-size: 1.5rem;
+  background-color: #2041CA;
+  padding: .5rem .5rem;
+  border: none;
+  border-radius: .7rem;
+}
+.create-acc{
+  color: white;
+  width: auto;
+  
+  text-decoration: none;
+}

@@ -1,0 +1,81 @@
+@import '../../../../scss/mixin';
+@import '../../../../scss/variables.scss';
+
+.adcmnt-container{
+    width: 100%;
+    height: auto;
+    padding: 1rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $mainbodycolor;
+    &-content{
+        width: 90%;
+        height: auto;
+        padding:1rem;
+        border-radius: .5rem;
+        background-color: white;
+        &-one{
+width: 100%;
+height:auto;
+display: flex;
+align-items: center;
+// background-color: green;
+&>img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50rem;
+    // background-color: yellow;
+}
+&>h1{
+  margin-left: 1rem;
+  color:$headingcolor;
+//   background-color:yellow;
+  width:70%; 
+  cursor:pointer;
+}
+&>h1:hover{
+    text-decoration: underline;
+}
+&>p{
+    font-size: 1.5rem;
+    color: $textcolor;
+    // background-color: aqua;
+    width:25%;
+    text-align: right;
+}
+        }
+        
+        &-two{
+        width:80%;
+        height:auto;
+        display: flex;
+        align-items: center;
+        padding: .5rem;
+        margin-left: 3.3rem;
+        // background-color:lightcoral;
+        &>p{
+            color: $textcolor;
+            font-size: 1.4rem;
+            margin-left: 1rem;
+        }    
+        &>button{
+            margin-left: 1rem;
+            background: none;
+            border: none;
+            color: $headingcolor;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+    }
+        &>hr{
+            margin-top: 1rem;
+            color: $textcolor;
+        }
+        &>p{
+         font-size: 1.5rem;
+         margin-top: 1rem;
+         color:$textcolor;
+        }
+    }
+}

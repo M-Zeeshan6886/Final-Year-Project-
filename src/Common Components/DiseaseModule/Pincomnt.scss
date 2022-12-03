@@ -1,0 +1,122 @@
+@import '../../scss/mixin';
+@import '../../scss/variables.scss';
+
+.pincomnt-container{
+    width: 100%;
+    height: auto;
+    border-radius:.5rem ;
+    margin-top: 2rem;
+    padding: .5rem 0rem;
+    background-color: white;
+    @include respond(phone){
+        width: 100%;
+    }
+    &-content{
+        width: 100%;
+        height: auto;
+        padding: .5rem 0rem;
+        // background-color: lightcoral;
+        &-one{
+            width: 100%;
+            height: auto;
+            padding: .5rem 0rem;
+            display: flex;
+            align-items: center;
+            // background-color: lightgreen;
+           @include respond(phone){
+            flex-direction: column;
+            justify-content: left;
+           }
+            &>img{
+                width: 4rem;
+                height: 4rem;
+                margin-left: .5rem;
+                border-radius: 50rem;
+                @include respond(phone){
+                 background-color: aqua;
+                //  width: 100%;
+                margin-right: 46rem;
+                }
+            }
+            &>h1{
+                color: $headingcolor;
+                margin-left: 1rem;
+                // background-color:yellow ;
+                width: 70%;
+                @include respond(phone){
+                //  background-color: aqua;   
+                 margin-right: 14rem;
+                 margin-top: 1rem;
+                }
+            }
+            &>p{
+                width: 30%;
+                font-size: 1.5rem;
+                color: $textcolor;
+                text-align: right;
+                margin-right: 1rem;
+                @include respond(phone){
+                    // background-color: lightblue;
+                    text-align: left;
+                    margin-right: 33.3rem;
+                }
+            }
+           
+        }
+        &-two{
+            width: 100%;
+            height: auto;
+            padding: .5rem 0rem;
+            // background-color: lightgrey;
+            &>p{
+                width: 90%;
+                font-size: 1.5rem;
+                color: $textcolor;
+                margin-left: 5rem;
+                text-align: justify;
+                @include respond(phone){
+                    margin-left: 2rem;
+                }
+            }
+        }
+        &>hr{
+            width: 98%;
+            color: $textcolor;
+            margin-left: .5rem;
+
+        }
+        &-three{
+            display: flex;
+            align-items: center;
+            // background-color: lawngreen;
+            @include respond(phone){
+             flex-direction: column;
+             justify-content: left;
+             width: 100%;       
+            }
+            &>p{
+                font-size: 1.5rem;
+                color: $textcolor;
+                margin-left: 1rem;
+                @include respond(phone){
+                 margin-left: -32rem;   
+                }
+            }
+            &>span{
+                margin-left: 1rem;
+                font-size: 1.5rem;
+                color: darkblue;
+                font-weight: bold;
+                cursor: pointer;
+                @include respond(phone){
+                 margin-left: -31rem;
+                 justify-content: left;
+                   
+                }
+            }
+            &>span:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

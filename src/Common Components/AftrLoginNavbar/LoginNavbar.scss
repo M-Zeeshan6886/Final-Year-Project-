@@ -1,0 +1,263 @@
+@import '../../scss/mixin';
+@import '../../scss/variables.scss';
+
+.LNavbar-container{
+    width: 100%;
+    height: auto;
+    padding: .5rem 0rem;
+    background-color: white;
+    box-shadow: 1px 0px 10px 4px$textcolor;
+
+    @include respond(tab-port){
+     display: none;
+    }
+
+    &-content{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        padding: .5rem 0rem;
+        // background-color: white;
+        &-left{
+        width: 25%;
+        height: auto;
+        padding: .5rem 0rem;
+        display: flex;
+        align-items: center;
+        // background-color: lavender;
+        &>img{
+            width: 6rem;
+            height: 6rem;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+        &>h1{
+            color: $Skyblue;
+            margin-left: .7rem;
+            cursor: pointer;
+        }
+        }
+        &-middle{
+            width: 50%;
+            height: auto;
+            padding: .5rem 0rem;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            // background-color: lawngreen;
+            &-button{
+                padding: .5rem .5rem;
+                background:none ;
+                text-decoration: none;
+                border: none;
+                color: black;
+                font-size: 1.5rem;
+            }
+            &-button:hover{
+                background-color: $Skyblue;
+                transition:.3s ease-in-out ;
+                color: white;
+                border-radius:.5rem ;
+                cursor: pointer;
+            }
+            &-button:not(:first-child){
+                margin-left: 2rem;
+            }
+        }
+        &-right{
+            width: 25%;
+            height: auto;
+            padding: .5rem 0rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            // background-color: lightcoral;
+           &-icons{
+            font-size:2rem;
+            border-radius: 50%;
+            padding: .3rem .5rem;
+            background-color: lightgray;
+            cursor: pointer;
+           }
+            &-icons:not(:first-child){
+                margin-left: 1rem;
+            }
+            &>button{
+                margin-right: 1rem;
+                margin-left: 1rem;
+                background-color: $blue;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding: .7rem 2rem;
+        border: 1px solid $blue;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        border-radius: 0.5rem;
+            }
+            &>button:hover{
+                background-color: white;
+          color: $blue;
+            }
+
+        }
+    }
+}
+
+.LNavbar-container-content-right-icons2{
+  padding: .5rem .4rem;
+  border-radius: 50%;
+  font-size: 2.2rem;
+  background-color: lightgray;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+
+//  Topbar Container
+
+.responsive-topbar-container {
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 1px 1px 10px 1px;
+    width: 100%;
+
+  }
+.responsive-topbar-top-logo{
+    
+    &>img{
+        width: 6.2rem;
+        height: 6.2rem;
+    }
+    &>h1{
+        font-size:2.3rem ;
+    }
+}  
+  .contact-active-none {
+    display: none;
+  }
+  
+  .contact-active {
+    display: block;
+    // height: 30vh;
+    background-color: $bodybgcolor;
+    & > h1 {
+      color: white;
+    }
+  }
+  
+  .responsive-menu-link {
+    &-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 70vh;
+      flex-direction: column;
+      &-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        & > * {
+            font-size: 1.5rem;
+            text-decoration: none;
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: black;
+          transition: 0.3s ease-in-out;
+          &:not(:first-child) {
+            margin-top: 2rem;
+          }
+          &:hover {
+            border-bottom: 1px solid black;
+          }
+        }
+      }
+    }
+  }
+
+  // New Code
+
+.dropdown-menu {
+    background-color: $bodybgcolor;
+    box-shadow: 3px 4px 10px 0px $textcolor;
+    position: absolute;
+    top: 80px;
+    right: 35px;
+  
+    border-radius: 0.5rem;
+    padding: 10px 20px;
+    width: 350px;
+  }
+  
+  .dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: 87px;
+    height: 20px;
+    width: 20px;
+    background: var(--secondary-bg);
+    transform: rotate(45deg);
+    background-color: $bodybgcolor;
+  }
+  
+  .dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: var(--speed) ease;
+  }
+  
+  .dropdown-menu.inactive {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: var(--speed) ease;
+  }
+  
+  .dropdown-menu ul li {
+    padding: 10px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .dropdown-menu ul li:hover a {
+    color: rgb(212, 33, 9);
+    cursor: pointer;
+  }
+  
+  .dropdown-menu ul li:hover img {
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  .dropdownItem {
+    display: flex;
+    margin: 10px auto;
+  }
+  
+  .dropdownItem img {
+    max-width: 3rem;
+    border-radius: 50%;
+    margin-right: 10px;
+    // opacity: 0.5;
+    transition: var(--speed);
+  }
+  
+  .dropdownItem a {
+    max-width: 100px;
+    margin-left: 10px;
+    transition: var(--speed);
+  }
+  .noti-items h3{
+    color:$headingcolor;
+  }
+  .noti-items p{
+    color: $textcolor;
+  }

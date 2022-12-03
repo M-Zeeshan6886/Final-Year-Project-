@@ -1,0 +1,70 @@
+@import '../../../../scss/mixin';
+@import '../../../../scss/variables.scss';
+
+
+.adheader-container{
+    width: 100%;
+    height:auto;
+    padding: .5rem 0rem;
+    display: flex;
+    align-items: center;
+    background-color: $bodybgcolor;
+    &-content{
+        width: 100%;
+        height: auto;
+        padding: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // background-color: aqua;
+        @include respond(tab-port){
+            flex-direction: column;
+            margin-top:7rem;
+        }
+        &-left{
+            width:40%;
+            height: auto;
+            padding: 1rem;
+            margin-right: 1rem;
+            // background-color: lawngreen;
+            @include respond(tab-port){
+                width: 100%;
+                // margin-top: 5rem;
+            }
+            &>h1{
+                color: $headingcolor;
+                font-size: 3rem;
+                margin-top: 2rem;
+                @include respond(tab-port){
+                    margin-left: 2rem;
+                }
+            }
+            &>p{
+                color:$textcolor;
+                font-size: 1.5rem;
+                margin-top: 1rem;
+                @include respond(tab-port){
+                    margin-left: 2rem;
+                }
+            }
+        }
+        &-right{
+            width:40%;
+            height: auto;
+            margin-left: 6rem;
+            // background-color: lawngreen;
+            @include respond(tab-port){
+                width: 80%;
+                display: flex;
+                justify-content: center;
+                margin-left: 0rem;
+            }
+            &>img{
+                width: 65vh;
+                height: 50vh;
+                border-radius: 1rem;
+                // text-align: left;
+            }
+        }
+    }
+}
