@@ -56,7 +56,7 @@ const Footer = () => {
                 <div className='footer-container-content-three-2'>
                     {/* <img src={Chat} alt='footer-ch' /> */}
                     <h2><AiOutlineWechat /></h2>
-                    <h1>Chat Online</h1>
+                    <Link to="/addpost" className="chat-ftr">Start chat</Link>
                 </div>
 
                 <div className='footer-container-content-three-3'>
@@ -69,10 +69,7 @@ const Footer = () => {
         </div>
         <div className='footer-container-content2'>
             {/* <hr/> */}
-            <img src={FB} alt="social-icon" />
-                <img src={insta} alt="social-icon" />
-                <img src={linkedin} alt="social-icon" />
-                <img src={rss} alt="social-icon" />
+                <p>© 2022 - All Rights Reserved.</p>
         </div>
     </div>
     

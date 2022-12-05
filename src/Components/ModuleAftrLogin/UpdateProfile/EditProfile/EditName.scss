@@ -8,6 +8,9 @@
     // display: flex;
     // flex-direction: column;
     // align-items: center;
+    @include respond(tab-port){
+        padding-top: 14rem;
+    }
     &-SignUp{
         // background-color: white;
         display: flex;
@@ -35,4 +38,18 @@
             }
         }
     }
+}
+.create-acc2{
+    font-size: 1.5rem;
+    padding: .8rem 1.5rem;
+    border: none;
+    border-radius: .5rem ;
+    color:white;
+    background-color: $blue;
+    border: 1px solid $blue;
+}
+.create-acc2:hover{
+    background-color: white;
+    color: $blue;
+    border: 1px solid $blue;
 }

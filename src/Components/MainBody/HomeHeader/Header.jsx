@@ -37,7 +37,7 @@ const BodyHeader = () => {
      <p>Anxiety</p>
      <span>||</span>
      <p>Depression</p>
-     <span>||</span>
+     <span className="commontopic-orperator">||</span>
      </div>
      <div className='commontopic-container-content-disease2'>
      <p>Suicidal thoughts & self harm</p>

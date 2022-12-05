@@ -106,15 +106,48 @@ const LoginNavbar = () => {
               <h1>Mental Health</h1>
             </div>
 
-            <div className="responsive-topbar-top-hamburger">
+            
+
+            <div className="responsive-topbar-top-hamburger" ref={menuRef}>
+              
+            <Link
+                    to="/profile"
+                    className="LNavbar-container-content-right-icons"
+                  >
+                    <BsPersonPlus />
+                  </Link>
+
+            <Link to="" className="LNavbar-container-content-right-icons">
+                    <CiBellOn 
+                    onClick={() => {
+                      setOpen(!open);
+                    }}
+                    />
+                  </Link>
+              
+{/*  Start*/}
+<div className={`dropdown-menu ${open ? "active" : "inactive"}`}>
+               
+               <ul>
+                 <li className="dropdownItem">
+                   <img src={Profileimg} alt="p-img" />
+                   <div className="noti-items">
+                    <h3>User Name</h3>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+                   </div>
+                 </li>
+               </ul>
+             </div>
+             {/* End  */}
+
               <Link>
                 {sidebar ? (
-                  <IoMdClose onClick={showSidebar} style={{ color: "white" }} />
+                  <IoMdClose className="cross-icons" onClick={showSidebar} style={{ color: "" }} />
                 ) : (
                   <IoIosMenu
-                    className="cross-icons"
+                    className="hamburger-icons"
                     onClick={showSidebar}
-                    style={{ color: "white" }}
+                    // style={{ color: "white" }}
                   />
                 )}
               </Link>
@@ -134,15 +167,8 @@ const LoginNavbar = () => {
                   <Link to="/help">Form Guidline</Link>
                 </div>
                 <div>
-                  <Link
-                    to="/profile"
-                    className="LNavbar-container-content-right-icons"
-                  >
-                    <BsPersonPlus />
-                  </Link>
-                  <Link to="" className="LNavbar-container-content-right-icons">
-                    <CiBellOn />
-                  </Link>
+                  
+
                 </div>
                 <br></br>
                 <div className="topbar-container-btn">

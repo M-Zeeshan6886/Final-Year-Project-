@@ -7,7 +7,7 @@ const Bodyleftbar = () => {
   return (
     <div className='Bodyleftbar-container'>
         <div className='Bodyleftbar-container-content'>
-            <button>Start Discussion</button>
+            <Link to="/addpost" className='start-btn'>Start Discussion</Link>
             <img src={Qimg} alt='Qphoto' />
             <h2>FAQ</h2>
             <p>Find answers to some of the more frequently asked questions on the Forums.</p>

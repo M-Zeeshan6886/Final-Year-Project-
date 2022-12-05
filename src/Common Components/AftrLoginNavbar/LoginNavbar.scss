@@ -82,6 +82,9 @@
            }
             &-icons:not(:first-child){
                 margin-left: 1rem;
+                @include respond(tab-port){
+                  margin-right: 2rem;
+                }
             }
             &>button{
                 margin-right: 1rem;
@@ -114,6 +117,11 @@
   cursor: pointer;
 }
 
+
+.responsive-topbar-top-hamburger{
+  display: flex;
+  align-items: center;
+}
 
 //  Topbar Container
 
@@ -194,6 +202,9 @@
     border-radius: 0.5rem;
     padding: 10px 20px;
     width: 350px;
+    @include respond(phone){
+      width: 270px;
+    }
   }
   
   .dropdown-menu::before {
@@ -206,6 +217,9 @@
     background: var(--secondary-bg);
     transform: rotate(45deg);
     background-color: $bodybgcolor;
+    @include respond(tab-port){
+      right: 25px;
+    }
   }
   
   .dropdown-menu.active {
@@ -227,15 +241,6 @@
     border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
   
-  .dropdown-menu ul li:hover a {
-    color: rgb(212, 33, 9);
-    cursor: pointer;
-  }
-  
-  .dropdown-menu ul li:hover img {
-    opacity: 1;
-    cursor: pointer;
-  }
   
   .dropdownItem {
     display: flex;
@@ -248,16 +253,19 @@
     margin-right: 10px;
     // opacity: 0.5;
     transition: var(--speed);
-  }
-  
-  .dropdownItem a {
-    max-width: 100px;
-    margin-left: 10px;
-    transition: var(--speed);
+    @include respond(tab-port){
+      width: 5rem;
+    }
   }
   .noti-items h3{
     color:$headingcolor;
+    @include respond(tab-port){
+      font-size: 2rem;
+    }
   }
   .noti-items p{
     color: $textcolor;
+    @include respond(tab-port){
+      font-size: 1.5rem;
+    }
   }

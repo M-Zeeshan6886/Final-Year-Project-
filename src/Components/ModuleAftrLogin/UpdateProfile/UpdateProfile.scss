@@ -8,6 +8,9 @@
     display: flex;
     justify-content: center;
     background-color: $mainbodycolor;
+    @include respond(tab-port){
+        padding-top: 14rem;
+    }
     &-content{
         width: 70%;
         height: 50vh;
