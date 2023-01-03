@@ -23,7 +23,7 @@ const NavbarOne = () => {
             </div>
             <div className="topbar-container-btn">
               <Link to="/login" className="topbar-container-btn-first">Log In</Link>
-              <Link to="/signin" className="topbar-container-btn-second">Sign In</Link>
+              <Link to="/signin" className="topbar-container-btn-second">Sign Up</Link>
             </div>
           </div>
         </nav>

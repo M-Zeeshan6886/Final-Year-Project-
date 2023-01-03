@@ -85,9 +85,9 @@ const SignUp = () => {
                       />
 
                       <div className="SignUp-container-right-form-SignUp-btn">
-                        <button id="btn3">
-                          <Link className="create-acc">Create account</Link>
-                        </button>
+                      <center style={{marginTop:"2rem"}}>
+                          <Link className="create-acc"  >Create account</Link>
+                          </center>
                       </div>
                     </Form>
                   </div>
