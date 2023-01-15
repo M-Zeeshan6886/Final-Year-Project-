@@ -128,6 +128,12 @@ border: none;
         @include respond(tab-port){
             // background-color: aqua;
         }
+        
+        @include respond(phone){
+            flex-direction:column;
+            margin-top: 1rem;
+        }
+        
         &>h1{
             color: white;
         }
@@ -138,6 +144,12 @@ border: none;
                 // flex-direction: column;
 margin-left: 3rem;
             }
+            
+        @include respond(phone){
+            // flex-direction:column;
+            margin-left: 3.6rem;
+            margin-top: 2rem;
+        }
             &>p{
                 font-size: 1.5rem;
                 margin-right: 2rem;
@@ -173,5 +185,10 @@ margin-left: 3rem;
             }
 
         }
+    }
+}
+.commontopic-orperator{
+    @include respond(phone){
+        display: none;
     }
 }

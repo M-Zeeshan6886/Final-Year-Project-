@@ -127,13 +127,13 @@
       // padding: 1rem 1rem;
       &-hamburger {
         margin-top: 1rem;
-        margin-right: 1rem;
+        // margin-right: 1rem;
         border-radius: 1rem;
         // align-items: center;
-        color: black;
-        margin-right: 1rem;
+        color: red;
+        // margin-right: 1rem;
         font-size: 3rem;
-        background-color: $Skyblue;
+        // background-color: $Skyblue;
         
         cursor: pointer;
       }
@@ -153,6 +153,19 @@
       }
     }
   }
+}
+
+
+
+.hamburger-icons{
+  color: $Skyblue;
+  margin-right: 3rem;
+  
+}
+.cross-icons{
+  color: $Skyblue;
+  margin-right: 3rem;
+  
 }
 
 //  Topbar Container

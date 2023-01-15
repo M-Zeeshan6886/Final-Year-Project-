@@ -57,7 +57,7 @@ const EditName = () => {
                       />
 
                       <div className="SignUp-container-right-form-SignUp-btn">
-                          <button className="create-acc">Submit</button>
+                          <button className="create-acc2">Submit</button>
                       
                       </div>
                     </Form>
@@ -70,4 +70,4 @@ const EditName = () => {
   )
 }
 
-export default EditName
+export default EditName;

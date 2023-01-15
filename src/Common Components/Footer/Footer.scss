@@ -189,18 +189,18 @@
     &-content2{
         width: 100%;
         background-color: $mainbodycolor;
-        height: 6vh;
+        // height: 6vh;
+        padding:.5rem 0rem;
         display: flex;
         border-top: 1px solid rgb(189, 187, 187);
         justify-content: right;
         align-items: center;
         // flex-direction: column;
         
-        &>img{
-            margin-top:.5rem;
-            margin-right: 1rem;
-            width: 3rem;
-            height: 3rem;
+        &>p{
+            margin-right: 9rem;
+            font-size:1.2rem;
+            color: $textcolor;
             cursor: pointer;
         }
     }
@@ -214,4 +214,11 @@
 }
 .link-footer:hover{
     text-decoration: underline;
+}
+.chat-ftr{
+    margin-left: 1rem;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color:$headingcolor;
 }

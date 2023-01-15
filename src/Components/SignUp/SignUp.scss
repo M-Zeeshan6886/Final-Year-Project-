@@ -36,7 +36,7 @@
     }
     &-right {
       width: 57%;
-      height: 87.6vh;
+      height: 87.5vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -49,6 +49,7 @@
       &-form {
         &-SignUp {
           width: 75%;
+          height: auto;
           margin: auto;
 
           @include respond(phone) {
@@ -114,18 +115,26 @@ color:white;
 border: none;
   // text-decoration: underline;
 }
-#btn3{
-  align-items: center;
-  // margin-top: 1rem;
+// #btn3{
+//   align-items: center;
+//   // margin-top: 1rem;
+// }
+.create-acc{
+  margin-top: 1rem;
   font-size: 1.5rem;
-  background-color: #2041CA;
-  padding: .5rem .5rem;
+  padding: .7rem 1rem;
   border: none;
   border-radius: .7rem;
-}
-.create-acc{
   color: white;
-  width: auto;
+  background-color: #2041CA;
+  // width: auto;
   
   text-decoration: none;
+}
+.create-acc:hover{
+  font-weight:600 ;
+  color: #2041CA;
+  background-color: white;
+  border:1px solid #2041CA;
+  transition: .5s ease-in-out;
 }

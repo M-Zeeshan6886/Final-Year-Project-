@@ -23,7 +23,7 @@ const NavbarOne = () => {
             </div>
             <div className="topbar-container-btn">
               <Link to="/login" className="topbar-container-btn-first">Log In</Link>
-              <Link to="/signin" className="topbar-container-btn-second">Sign In</Link>
+              <Link to="/signin" className="topbar-container-btn-second">Sign Up</Link>
             </div>
           </div>
         </nav>
@@ -47,12 +47,12 @@ const NavbarOne = () => {
               <div className="responsive-topbar-top-hamburger">
                 <Link>
                   {sidebar ? (
-                    <IoMdClose onClick={showSidebar} style={{ color: "white" }} />
+                    <IoMdClose className="cross-icons" onClick={showSidebar} style={{ color: "" }} />
                   ) : (
                     <IoIosMenu
                       className="cross-icons"
                       onClick={showSidebar}
-                      style={{ color: "white" }}
+                      // style={{ color: "$skybl" }}
                     />
                   )}
                 </Link>

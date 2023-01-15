@@ -1,5 +1,8 @@
 import React from 'react';
 import './StartDiscussion.scss';
+import { Link } from 'react-router-dom';
+
+
 
 const StartDiscussion = () => {
   return (
@@ -12,7 +15,7 @@ const StartDiscussion = () => {
     <option value={2}>Most commented</option>
     <option value={3}>Most supported</option>
   </select>
-  <button>Start Discussion</button>
+  <Link to="/addpost" className="btn-discussion">Start Discussion</Link>
         </div>
     </div>
     

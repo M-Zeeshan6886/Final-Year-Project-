@@ -45,7 +45,19 @@
             margin-left: 1rem;
         }
         &>button:hover{
-            background-color: $headingcolor;
         }
     }
+}
+.btn-discussion{
+    background-color: $blue;
+    color: white;
+    border: none;
+    padding: .8rem 3rem;
+    border-radius: .5rem;
+    margin-left: 1rem;
+    text-decoration:none;
+    font-size: 1.5rem;
+}
+.btn-discussion:hover{
+    background-color: $headingcolor;
 }
