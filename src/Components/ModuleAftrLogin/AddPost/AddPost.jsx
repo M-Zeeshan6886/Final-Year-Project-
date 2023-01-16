@@ -44,8 +44,20 @@ const editor = useRef(null);
 
             <div className='addpost-container-right-content-txtEditor-field'>
                 <TextEditor 
-                ref={editor} onChange={(content) => setValue(content)}
+                ref={editor} onChange={(content) => {setValue(content);
+                
+                
+                
+                const text = content;
+                  const data = document.createElement("div");
+                  data.innerHTML = text;
+                  const para = data.textContent || data.innerText || "";
+                  console.log(para);
+                }}
                 setValue={setValue}
+
+                
+
                 />
                  <div className="addpost-container-right-content-btn">
                 <Link to="" className="cancle-btn" >Cancle</Link>
