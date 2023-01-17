@@ -1,6 +1,7 @@
 import React from 'react'
 import './AddPost.scss';
-import LoginNavbar from '../../../Common Components/AftrLoginNavbar/LoginNavbar';
+import NavbarOne from '../../../Common Components/Navbar/Navbarbefor';
+// import LoginNavbar from '../../../Common Components/AftrLoginNavbar/LoginNavbar';
 import Bodyleftbar from '../../../Common Components/MainbodyLeft/Bodyleftbar';
 import './AddPost.scss';
 import { Link } from 'react-router-dom';
@@ -16,7 +17,8 @@ const AddPost = () => {
 const editor = useRef(null);
   return (
     <>
-    <LoginNavbar />
+    {/*<LoginNavbar />*/}
+    <NavbarOne />
 
     <div className="addpost-container">
         <div className='addpost-container-left'>
@@ -25,10 +27,10 @@ const editor = useRef(null);
         <div className='addpost-container-right'>
             <div className='addpost-container-right-content'>
             <h1>Post a new disscussion</h1>
-            <p>Start your discussion using the form below. It will need to be
+             <p>Start your discussion using the form below. It will need to be
                  checked by our moderators first, so it won't appear straight away. 
                  Remember to choose a clear title and keep it short and sweet.</p>
-                 <p>Your post content is limited to 2500 characters.</p>
+                 <p>Your post content is limited to 2500 characters.</p> 
 
                  <div className="addpost-container-right-content-inputfield">
                 <input type="text" placeholder=' Title' />
