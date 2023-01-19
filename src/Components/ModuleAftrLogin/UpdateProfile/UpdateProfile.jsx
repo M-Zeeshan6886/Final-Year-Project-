@@ -1,14 +1,16 @@
 import React from 'react';
-import LoginNavbar from '../../../Common Components/AftrLoginNavbar/LoginNavbar';
+// import LoginNavbar from '../../../Common Components/AftrLoginNavbar/LoginNavbar';
 import './UpdateProfile.scss';
 import EditProfile from '../../assest/profileimg.png';
 import {Link} from 'react-router-dom';
 import Footer from '../../../Common Components/Footer/Footer';
+import NavbarOne from '../../../Common Components/Navbar/Navbarbefor';
 
 const UpdateProfile = () => {
   return (
     <>
-<LoginNavbar />
+{/* <LoginNavbar /> */}
+<NavbarOne />
 <div className='updateprofile-container'>
     <div className='updateprofile-container-content'>
     <h1>Member Profile</h1>

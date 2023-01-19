@@ -1,7 +1,8 @@
 import React from 'react';
 import './EditName.scss';
+import NavbarOne from '../../../../Common Components/Navbar/Navbarbefor';
 import FormInput from '../../../FormInput/FormInput';
-import LoginNavbar from '../../../../Common Components/AftrLoginNavbar/LoginNavbar';
+// import LoginNavbar from '../../../../Common Components/AftrLoginNavbar/LoginNavbar';
 import Footer from '../../../../Common Components/Footer/Footer';
 // For Form validation
  import { Formik, Form } from "formik";
@@ -14,7 +15,8 @@ const EditName = () => {
   })
   return (
     <>
-    <LoginNavbar />
+    {/* <LoginNavbar /> */}
+    <NavbarOne />
     <div className="SignUp-container-right-form2">
               <Formik
                 initialValues={{
