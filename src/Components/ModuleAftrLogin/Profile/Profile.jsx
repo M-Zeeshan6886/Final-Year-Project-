@@ -1,5 +1,6 @@
 import React from 'react'
-import LoginNavbar from '../../../Common Components/AftrLoginNavbar/LoginNavbar';
+import NavbarOne from '../../../Common Components/Navbar/Navbarbefor';
+// import LoginNavbar from '../../../Common Components/AftrLoginNavbar/LoginNavbar';
 import Adheader from '../../Modules/All Discussion/Ad-Header/Ad-header';
 import './Profile.scss';
 import { Link } from 'react-router-dom'
@@ -9,7 +10,8 @@ import Footer from '../../../Common Components/Footer/Footer';
 const Profile = () => {
   return (
     <>
-<LoginNavbar />       
+{/* <LoginNavbar />   */}
+<NavbarOne/>     
     <Adheader 
     Heading="Profile"
     Para="View profile information, and see or manage your activities. " 
