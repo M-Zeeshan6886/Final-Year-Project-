@@ -1,31 +1,54 @@
-import React from 'react';
-import './Login.scss';
-import FormInput from '../FormInput/FormInput';
-import { Link } from 'react-router-dom';
-   // For Form validation
-   import { Formik, Form } from "formik";
-   import * as Yup from "yup";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Login.scss";
+import FormInput from "../FormInput/FormInput";
+import { Link } from "react-router-dom";
+// For Form validation
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { userLogin, clearErrors, clearMessages } from "./../../store/actions";
 
 const Login = () => {
+  const navigate = useNavigate("");
+  const dispatch = useDispatch();
   const validate = Yup.object({
     email: Yup.string().email("Email is invalid").required("Email is Required"),
     password: Yup.string()
       .required("No password provided.")
       .min(8, "Password is too short - should be 8 chars minimum."),
   });
+  const { errors, message, loading } = useSelector(
+    (state) => state.authReducer
+  );
 
+  useEffect(() => {
+    if (errors.length > 0) {
+      toast.error(errors);
+      dispatch(clearErrors());
+    }
+    if (message != "") {
+      toast.success(message);
+      dispatch(clearMessages());
+      setTimeout(() => navigate("/home"), 2000);
+    }
+  }, [errors, message]);
+  
   return (
     <>
-    <div className="signin">
+      <div className="signin">
         <div className="signin-container">
           <div className="signin-container-left">
             <div className="signin-container-left-content">
               <h1 className="signin-container-left-content-heading">
                 Wellcome Back!
               </h1>
-              <center><p className='login-txt'>
-              Log-in to your account to access the Mental Health Forums.
-              </p></center>
+              <center>
+                <p className="login-txt">
+                  Log-in to your account to access the Mental Health Forums.
+                </p>
+              </center>
             </div>
           </div>
           <div className="signin-container-right">
@@ -37,7 +60,7 @@ const Login = () => {
                 }}
                 validationSchema={validate}
                 onSubmit={(values) => {
-                  console.log(values);
+                  dispatch(userLogin(values));
                 }}
               >
                 {(formik) => (
@@ -57,18 +80,19 @@ const Login = () => {
                       />
                       <div className="signin-container-right-form-signin-checkbox">
                         <input type="checkbox" />
-                        <p className='chckbx-text'>Remember me</p>
+                        <p className="chckbx-text">Remember me</p>
                       </div>
-                      
+
                       <div className="signin-container-right-form-signin-btn">
                         <center>
-                        
-      <Link to="/home" className="login-btn2">Loged in</Link>
-     
+                          <button type="submit" className="create-acc">
+                            {loading ? "Loging..." : "Log IN"}
+                          </button>
                         </center>
-                        <a href="#" className='frgt-pswrd'>Forget Your Password!?</a>
+                        <a href="#" className="frgt-pswrd">
+                          Forget Your Password!?
+                        </a>
                       </div>
-                      
                     </Form>
                   </div>
                 )}
@@ -77,11 +101,8 @@ const Login = () => {
           </div>
         </div>
       </div>
-    
-    
-    
     </>
-  )
-}
+  );
+};
 
 export default Login;

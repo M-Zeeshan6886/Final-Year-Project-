@@ -1,13 +1,12 @@
-
-import './App.scss';
+import "./App.scss";
 // import Homebefor from './Components/Modules/Home/Homebefor';
-import Router from './Router';
+import Router from "./Router";
 
 function App() {
   return (
     <>
-  {/* <Homebefor /> */}
-  <Router />
+      {/* <Homebefor /> */}
+      <Router />
     </>
   );
 }
