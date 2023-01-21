@@ -100,7 +100,24 @@ border: none;
         }
     }
 }
-
+.bh-btns{
+    display: flex;
+    align-items: center;
+}
+.ad-category{
+    font-size: 1.5rem;
+    height: 2rem;
+    margin-left: 1rem;
+    padding: .5rem 1rem;
+    background-color: $blue;
+    color: white;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.ad-category:hover{
+    background-color: $darkblue;
+}
 // .arrow-icon{
 //     margin-top:1rem ;
 //     font-size: 2rem;

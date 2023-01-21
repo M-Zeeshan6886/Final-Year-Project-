@@ -31,10 +31,13 @@ const BodyHeader = () => {
             through.
           </h3>
           <br></br>
+          <div classNAme="bh-btns">
           <Link to="/addpost" className="bodyheader-container-left-btn">
             Start discussion
             {/* <HiOutlineArrowSmRight  className='arrow-icon' /> */}
           </Link>
+          <button className="ad-category">Add Category</button>
+          </div>
           <div className="bodyheader-container-left-inputfield">
             <input type={Search} placeholder=" Search" />
             <button>

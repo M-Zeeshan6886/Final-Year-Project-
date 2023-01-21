@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./AddPost.scss";
-import LoginNavbar from "../../../Common Components/AftrLoginNavbar/LoginNavbar";
+// import LoginNavbar from "../../../Common Components/AftrLoginNavbar/LoginNavbar";
 import Bodyleftbar from "../../../Common Components/MainbodyLeft/Bodyleftbar";
 import "./AddPost.scss";
 import { Link } from "react-router-dom";
@@ -10,6 +10,7 @@ import { useState } from "react";
 import Footer from "../../../Common Components/Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategory } from "./../../../store/actions";
+import NavbarOne from "../../../Common Components/Navbar/Navbarbefor";
 
 const AddPost = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,8 @@ const AddPost = () => {
   };
   return (
     <>
-      <LoginNavbar />
+      {/* <LoginNavbar /> */}
+      <NavbarOne />
 
       <div className="addpost-container">
         <div className="addpost-container-left">
@@ -71,15 +73,22 @@ const AddPost = () => {
             <div className="addpost-container-right-content-txtEditor-field">
               <TextEditor
                 ref={editor}
-                onChange={(content) => setValue(content)}
-                // setValue={setValue}
+                onChange={(content) => {setValue(content);
+                
+                  const text = content;
+                  const data = document.createElement("div");
+                  data.innerHTML = text;
+                  const para = data.textContent || data.innerText || "";
+                  console.log(para);
+                }}
+                setValue={setValue}
               />
               <div className="addpost-container-right-content-btn">
                 <Link to="" className="cancle-btn">
                   Cancle
                 </Link>
-                {/* <Link to="" className="post-btn" >Post</Link> */}
-                <button onClick={() => handlePost()}>Post</button>
+                {/* <Link to=""  >Post</Link> */}
+                <button className="post-btn" onClick={() => handlePost()}>Post</button>
               </div>
             </div>
           </div>
