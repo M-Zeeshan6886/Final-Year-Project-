@@ -36,7 +36,7 @@ const BodyHeader = () => {
             Start discussion
             {/* <HiOutlineArrowSmRight  className='arrow-icon' /> */}
           </Link>
-          <button className="ad-category">Add Category</button>
+          <Link to="/adcategory" className="ad-category">Add Category</Link>
           </div>
           <div className="bodyheader-container-left-inputfield">
             <input type={Search} placeholder=" Search" />
