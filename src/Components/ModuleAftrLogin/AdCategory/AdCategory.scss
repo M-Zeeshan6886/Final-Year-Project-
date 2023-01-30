@@ -1,0 +1,36 @@
+// @import '../'
+
+
+.adcategory-container{
+    width:100%;
+    height:auto;
+    padding:.5rem 0rem;
+    // background-color: lightgray;
+  &-content{
+    width:75%;
+    height:50vh;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    padding:.5rem 0rem;
+    // border :1px solid lightgray;
+    // background-color:pink;
+    &>input{
+        width: 98.3%;
+        height: 5vh;
+        padding: .3rem .5rem;
+        accent-color: blue;
+                //   margin-right: 1rem;
+                  border: 1px solid lightgray;
+                  outline: none;
+                  background: none;
+                  border-radius:.5rem;
+        &:focus{
+       outline: 1px solid skyblue;
+        }
+     }
+     &>input:hover{
+        box-shadow: 2px 2px 10px skyblue;
+     }
+  }
+}
