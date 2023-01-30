@@ -15,9 +15,11 @@ const AdCategory = () => {
                 // value={title}
                 // onChange={(e) => setTitle(e.target.value)}
               />
-
+    
+    <button className='ad-category2' > Create</button>
     </div>
      </div>
+
     <Footer />
     
     </>
