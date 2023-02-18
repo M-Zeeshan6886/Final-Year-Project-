@@ -1,36 +1,51 @@
-// @import '../'
+@import "../../../scss/mixin";
+@import "../../../scss/variables.scss";
 
-
-.adcategory-container{
-    width:100%;
-    height:auto;
-    padding:.5rem 0rem;
-    // background-color: lightgray;
-  &-content{
-    width:75%;
-    height:50vh;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    padding:.5rem 0rem;
+.adcategory-container {
+  width: 100%;
+  height: auto;
+  padding: 0.5rem 0rem;
+  // background-color: lightgray;
+  &-content {
+    width: 70%;
+    height: 50vh;
+    margin: auto;
+    // padding: 10rem 0rem;
+    display: flex;
+    align-items: center;
     // border :1px solid lightgray;
     // background-color:pink;
-    &>input{
-        width: 98.3%;
-        height: 5vh;
-        padding: .3rem .5rem;
-        accent-color: blue;
-                //   margin-right: 1rem;
-                  border: 1px solid lightgray;
-                  outline: none;
-                  background: none;
-                  border-radius:.5rem;
-        &:focus{
-       outline: 1px solid skyblue;
-        }
-     }
-     &>input:hover{
-        box-shadow: 2px 2px 10px skyblue;
-     }
+    & > input {
+      width: 85%;
+      height: 5vh;
+      top: 30px;
+      padding: 0.3rem 0.5rem;
+      accent-color: blue;
+      //   margin-right: 1rem;
+      border: 1px solid lightgray;
+      outline: none;
+      background: none;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      &:focus {
+        outline: 1px solid skyblue;
+      }
+    }
+    & > input:hover {
+      box-shadow: 2px 2px 10px skyblue;
+    }
+    & > button {
+      cursor: pointer;
+      padding:1rem 3.5rem;
+      background-color: $blue;
+      border: 1px solid $blue;
+      color: white;
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      &:hover {
+        color: $blue;
+        background-color: white;
+      }
+    }
   }
 }
