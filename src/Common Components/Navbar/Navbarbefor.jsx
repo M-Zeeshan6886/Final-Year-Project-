@@ -91,7 +91,7 @@ const NavbarOne = () => {
                 ) : (
                   <div className="topbar-container-btn">
                     <Link to="/login" className="topbar-container-btn-first">
-                      Log Insssssss
+                      Log In
                     </Link>
                     <Link to="/signin" className="topbar-container-btn-second">
                       Sign In
