@@ -1,157 +1,153 @@
-@import '../../../scss/mixin';
-@import '../../../scss/variables.scss';
+@import "../../../scss/mixin";
+@import "../../../scss/variables.scss";
 
-.addpost-container{
-    width: 100%;
+.addpost-container {
+  width: 100%;
+  height: auto;
+  padding: 0.5rem 0rem;
+  display: flex;
+  // align-items: center;
+  background-color: $mainbodycolor;
+  @include respond(tab-port) {
+    padding-top: 10rem;
+  }
+  &-left {
+    width: 25%;
     height: auto;
-    padding: .5rem 0rem;
-    display: flex;
-    // align-items: center;
-    background-color: $mainbodycolor;
-    @include respond(tab-port){
-        padding-top: 10rem;
-    }
-    &-left{
-        width: 25%;
-        height: auto;
-        margin-left: 1rem;
-        padding: .5rem 0rem;
-        border-radius: .5rem;
-        background-color: white;
-        @include respond(tab-port){
-            display: none;
-        }
-    }
-    &-right{
-        width: 70%;
-        height: auto;
-        margin-top:2rem ;
-        border-radius: .5rem;
-        margin-left: .5rem;
-        padding: .5rem 0rem;
-        background-color: white;
-        @include respond(tab-port){
-            width: 90%;
-            margin-left: 5%;
-        }
-        &-content{
-            padding: 1rem 1.5rem;
-            &>h1{
-                color: $textcolor;
-            }
-            &>p{
-                width: 70%;
-                color: $textcolor;
-                font-size: 1.5rem;
-                margin-top: 1rem;
-                @include respond(tab-port){
-                    width:90%;
-                }
-            }
-            &-inputfield{
-                width: 100%;
-    height:20vh;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-             &>input{
-                width: 98.3%;
-                height: 5vh;
-                padding: .3rem .5rem;
-                accent-color: blue;
-                        //   margin-right: 1rem;
-                          border: 1px solid lightgray;
-                          outline: none;
-                          background: none;
-                          border-radius:.5rem;
-                &:focus{
-               outline: 1px solid skyblue;
-                }
-             }
-             &>input:hover{
-                box-shadow: 2px 2px 10px skyblue;
-             }
-             &>select{
-                width:98.3%;
-                height: 5vh;
-                cursor: pointer;
-                color: $textcolor;
-                padding: .3rem .5rem;
-                margin-top:1.5rem;
-                border-radius: .5rem;
-                border: 1px solid $textcolor;
-                &:focus{
-                    outline:none;
-                } 
-            }
-            
-
-            }
-            &-txtEditor-field{
-                width: 100%;
-                height: 35vh;
-            }
-            &-btn{
-                width: 100%;
-    height: 10vh;
-    // margin-top: 7rem;
-    display:flex;
-    align-items: center;
-    justify-content: right;
-    // background-color: green;
-            }
-        }
-        
-    }
-}
-
-.cancle-btn{
-    width: 5rem;
-    height:auto;
-    color: #23276C;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.5rem;
-    padding: 0.5rem 0.5rem;
-    border: 1px solid #444772;
-    border-radius: 0.7rem;
-    cursor: pointer;
-    background-color: white;
-    font-family:'Roboto', sans-serif;
-    @include respond(phone){
-        // padding: .3rem 0rem;
-        // width: 3rem;
-        // margin-top: .5rem;
-    }
-}
-.cancle-btn:hover{
-    color: white;
-    background-color: #23276C;
-}
-.post-btn{
-    width: 5rem;
-    height:auto;
-    font-size: 1.5rem;
     margin-left: 1rem;
-    margin-right: 1rem;
-    padding: 0.5rem 0.5rem;
-    color:white;
-    text-decoration: none;
-    text-align: center;
-    background-color: #2041CA;
-    border: 1px solid #2041CA;
-    border-radius: 0.7rem;
-    cursor: pointer;
-    font-family:'Roboto', sans-serif;
-    @include respond(phone){
+    padding: 0.5rem 0rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+  &-right {
+    width: 70%;
+    height: auto;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    margin-left: 0.5rem;
+    padding: 0.5rem 0rem;
+    background-color: white;
+    @include respond(tab-port) {
+      width: 90%;
+      margin-left: 5%;
+    }
+    &-content {
+      padding: 1rem 1.5rem;
+      & > h1 {
+        color: $textcolor;
+      }
+      & > p {
+        width: 70%;
+        color: $textcolor;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        @include respond(tab-port) {
+          width: 90%;
+        }
+      }
+      &-inputfield {
+        width: 100%;
+        height: 20vh;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        & > input {
+          width: 98.3%;
+          height: 5vh;
+          padding: 0.3rem 0.5rem;
+          accent-color: blue;
+          //   margin-right: 1rem;
+          border: 1px solid lightgray;
+          outline: none;
+          background: none;
+          border-radius: 0.5rem;
+          &:focus {
+            outline: 1px solid skyblue;
+          }
+        }
+        & > input:hover {
+          box-shadow: 2px 2px 10px skyblue;
+        }
+        & > select {
+          width: 98.3%;
+          height: 5vh;
+          cursor: pointer;
+          color: $textcolor;
+          padding: 0.3rem 0.5rem;
+          margin-top: 1.5rem;
+          border-radius: 0.5rem;
+          border: 1px solid $textcolor;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      &-txtEditor-field {
+        width: 100%;
+        height: 35vh;
+      }
+      &-btn {
+        width: 100%;
+        height: 10vh;
+        // margin-top: 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        // background-color: green;
+      }
+    }
+  }
+}
+
+.cancle-btn {
+  width: 5rem;
+  height: auto;
+  color: #23276c;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #444772;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+  @include respond(phone) {
     // padding: .3rem 0rem;
     // width: 3rem;
     // margin-top: .5rem;
-
-    }
+  }
 }
-.post-btn:hover{
-    color:white;
-    background-color: #23276C;
+.cancle-btn:hover {
+  color: white;
+  background-color: #23276c;
+}
+.post-btn {
+  width: 5rem;
+  height: auto;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 0.5rem 0.5rem;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  background-color: #2041ca;
+  border: 1px solid #2041ca;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  @include respond(phone) {
+    // padding: .3rem 0rem;
+    // width: 3rem;
+    // margin-top: .5rem;
+  }
+}
+.post-btn:hover {
+  color: white;
+  background-color: #23276c;
 }
