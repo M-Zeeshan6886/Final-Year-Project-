@@ -88,11 +88,35 @@ export const getAllProduct = () => {
   };
 };
 
+export const addCategory = (body) => {
+  return async (dispatch) => {
+    dispatch({ type: authConstant.USER_REGISTER_REQUEST });
+    try {
+      await axios.post(`${process.env.REACT_APP_ROOT}/category`, body);
+      dispatch({
+        type: authConstant.ADD_CATEGORY_SUCCESS,
+        payload: "Created Successfully!",
+      });
+      dispatch(getAllCategory());
+    } catch (error) {
+      dispatch({
+        type: authConstant.USER_REGISTER_FAILURE,
+        payload: { err: error.response.data.message },
+      });
+    }
+  };
+};
+
 export const addPost = (body) => {
   return async (dispatch) => {
     dispatch({ type: authConstant.USER_REGISTER_REQUEST });
     try {
-      await axios.post(`${process.env.REACT_APP_ROOT}/product`, body);
+      const token = localStorage.getItem("userToken");
+      await axios.post(`${process.env.REACT_APP_ROOT}/product`, body, {
+        headers: {
+          Authorization: token ? `Bearer ${token}` : "", //the token is a variable which holds the token
+        },
+      });
       dispatch({
         type: authConstant.USER_REGISTER_SUCCESS,
         payload: "Created Successfully!",

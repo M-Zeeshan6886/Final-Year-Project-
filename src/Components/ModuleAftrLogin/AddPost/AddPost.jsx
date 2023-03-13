@@ -9,7 +9,7 @@ import { useRef } from "react";
 import { useState } from "react";
 import Footer from "../../../Common Components/Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCategory } from "./../../../store/actions";
+import { getAllCategory, addPost } from "./../../../store/actions";
 import NavbarOne from "../../../Common Components/Navbar/Navbarbefor";
 
 const AddPost = () => {
@@ -24,10 +24,11 @@ const AddPost = () => {
   useEffect(() => {
     dispatch(getAllCategory());
   }, []);
-
   const handlePost = () => {
-    console.log(`body is ${value} title is ${title} category is ${category}`);
+    const result = { title, category, body: value };
+    dispatch(addPost(result));
   };
+
   return (
     <>
       {/* <LoginNavbar /> */}
@@ -73,8 +74,9 @@ const AddPost = () => {
             <div className="addpost-container-right-content-txtEditor-field">
               <TextEditor
                 ref={editor}
-                onChange={(content) => {setValue(content);
-                
+                onChange={(content) => {
+                  setValue(content);
+
                   const text = content;
                   const data = document.createElement("div");
                   data.innerHTML = text;
@@ -88,7 +90,9 @@ const AddPost = () => {
                   Cancle
                 </Link>
                 {/* <Link to=""  >Post</Link> */}
-                <button className="post-btn" onClick={() => handlePost()}>Post</button>
+                <button className="post-btn" onClick={() => handlePost()}>
+                  Post
+                </button>
               </div>
             </div>
           </div>

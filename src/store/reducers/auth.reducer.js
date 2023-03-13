@@ -18,6 +18,7 @@ const authReducer = (state = initialState, action) => {
       };
     case authConstant.USER_LOGIN_SUCCESS:
     case authConstant.USER_REGISTER_SUCCESS:
+    case authConstant.ADD_CATEGORY_SUCCESS:
       return {
         ...state,
         loading: false,

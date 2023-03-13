@@ -27,14 +27,28 @@ const NavbarOne = () => {
               Form Guidline
             </Link>
           </div>
-          <div className="topbar-container-btn">
+          {/* <div className="topbar-container-btn">
             <Link to="/login" className="topbar-container-btn-first">
               Log In
             </Link>
             <Link to="/signin" className="topbar-container-btn-second">
               Sign Up
             </Link>
-          </div>
+          </div> */}
+          {localStorage.getItem("userToken") ? (
+            <div className="topbar-container-btn">
+              <button className="topbar-container-btn-second">Sign Out</button>
+            </div>
+          ) : (
+            <div className="topbar-container-btn">
+              <Link to="/login" className="topbar-container-btn-first">
+                Log In
+              </Link>
+              <Link to="/signin" className="topbar-container-btn-second">
+                Sign In
+              </Link>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -82,22 +96,6 @@ const NavbarOne = () => {
                   <Link to="/alldiscussion">All Discussation</Link>
                   <Link to="/help">Form Guidline</Link>
                 </div>
-                {localStorage.getItem("userToken") ? (
-                  <div className="topbar-container-btn">
-                    <button className="topbar-container-btn-second">
-                      Sign Out
-                    </button>
-                  </div>
-                ) : (
-                  <div className="topbar-container-btn">
-                    <Link to="/login" className="topbar-container-btn-first">
-                      Log Insssssss
-                    </Link>
-                    <Link to="/signin" className="topbar-container-btn-second">
-                      Sign In
-                    </Link>
-                  </div>
-                )}
               </div>
             </div>
           </div>

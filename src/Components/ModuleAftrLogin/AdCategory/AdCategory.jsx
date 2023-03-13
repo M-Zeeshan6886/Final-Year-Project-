@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./AdCategory.scss";
 import NavbarOne from "../../../Common Components/Navbar/Navbarbefor";
 import Footer from "../../../Common Components/Footer/Footer";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addCategory,
+  clearErrors,
+  clearMessages,
+} from "./../../../store/actions";
+import { toast } from "react-toastify";
+
 const AdCategory = () => {
+  const [name, setName] = useState("");
+  const dispatch = useDispatch();
+  const { message, errors } = useSelector((state) => state.authReducer);
+  const handleCreate = () => {
+    const result = { name };
+    dispatch(addCategory(result));
+    setName("");
+  };
+
+  useEffect(() => {
+    if (errors.length > 0) {
+      toast.error(errors);
+      dispatch(clearErrors());
+    }
+    if (message != "") {
+      toast.success(message);
+      dispatch(clearMessages());
+    }
+  }, [errors, message]);
   return (
     <>
       <NavbarOne />
@@ -12,11 +39,11 @@ const AdCategory = () => {
           <input
             type="text"
             placeholder=" Add Category"
-            // value={title}
-            // onChange={(e) => setTitle(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
-          
-          <button>Create</button>
+
+          <button onClick={() => handleCreate()}>Create</button>
         </div>
       </div>
       <Footer />
