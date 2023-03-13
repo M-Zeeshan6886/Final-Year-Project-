@@ -39,7 +39,7 @@ const SignUp = () => {
     if (message != "") {
       toast.success(message);
       dispatch(clearMessages());
-      setTimeout(() => navigate("/login"), 2000);
+      setTimeout(() => navigate("/"), 2000);
     }
   }, [errors, message]);
   return (

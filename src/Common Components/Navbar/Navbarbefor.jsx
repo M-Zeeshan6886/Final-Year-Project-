@@ -1,13 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbarbefor.scss";
 import logo from "../../Components/assest/Logo.jpg";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
-
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { Logout, clearErrors, clearMessages } from "./../../store/actions";
+import { toast } from "react-toastify";
 
 const NavbarOne = () => {
+  const navigate = useNavigate("");
   const [sidebar, setSidebar] = useState(false);
+  const dispatch = useDispatch();
+  const { errors, message, loading } = useSelector(
+    (state) => state.authReducer
+  );
   const showSidebar = () => setSidebar(!sidebar);
+
+  useEffect(() => {
+    if (errors.length > 0) {
+      toast.error(errors);
+      dispatch(clearErrors());
+    }
+    if (message != "") {
+      toast.success(message);
+      dispatch(clearMessages());
+      setTimeout(() => navigate("/"), 3000);
+    }
+  }, [errors, message]);
   return (
     <>
       <nav className="topbar">
@@ -37,7 +57,12 @@ const NavbarOne = () => {
           </div> */}
           {localStorage.getItem("userToken") ? (
             <div className="topbar-container-btn">
-              <button className="topbar-container-btn-second">Sign Out</button>
+              <button
+                className="topbar-container-btn-second"
+                onClick={() => dispatch(Logout())}
+              >
+                Sign Out
+              </button>
             </div>
           ) : (
             <div className="topbar-container-btn">
@@ -99,7 +124,7 @@ const NavbarOne = () => {
                 {localStorage.getItem("userToken") ? (
                   <div className="topbar-container-btn">
                     <button className="topbar-container-btn-second">
-                      Sign Out
+                      {loading ? "Signouting..." : "Sign Out"}
                     </button>
                   </div>
                 ) : (

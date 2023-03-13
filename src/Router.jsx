@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import AllDiscussion from "./Components/Modules/All Discussion/AllDiscussion";
 import Homebefor from "./Components/Modules/Home/Homebefor";
 import Login from "./Components/Login/Login";
@@ -15,6 +15,10 @@ import EditName from "./Components/ModuleAftrLogin/UpdateProfile/EditProfile/Edi
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Forgotpaswrd from "./Components/Modules/forgetpassword/Forgotpaswrd";
+import Resetpaswrd from "./Components/Modules/restpassword/Forgotpaswrd";
+import ProtectLoginRoute from "./Components/ProtectLoginRoute/ProtectLoginRoute";
+import ProtectedRoute from "./Components/ProTectedRoute/ProTectedRoute";
+import AccessDenied from "./Components/AccessDenied/AccessDenied";
 
 const Router = () => {
   return (
@@ -33,25 +37,35 @@ const Router = () => {
           theme="colored"
         />
         <Routes>
-          {/* Before Login pages  */}
-          <Route path="/" element={<Homebefor />} />
-          <Route path="/help" element={<FGuideline />} />
-          <Route path="/alldiscussion" element={<AllDiscussion />} />
-          <Route path="/disease" element={<DiseaseModule />} />
           <Route path="/forgetpassword" element={<Forgotpaswrd />} />
-
-          {/* //Signup pages */}
-          <Route path="/signin" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/resetPassword/:id" element={<Resetpaswrd />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route element={<ProtectLoginRoute />}>
+            <Route path="/" element={<Login />} />
+          </Route>
 
           {/* //After Login pages */}
-          <Route path="/home" element={<LoginHome />} />
-          <Route path="/addpost" element={<AddPost />} />
-          <Route path="/adcategory" element={<AdCategory />} />
-
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/updateprofile" element={<UpdateProfile />} />
-          <Route path="/editname" element={<EditName />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<Homebefor />} />
+            <Route path="/help" element={<FGuideline />} />
+            <Route path="/alldiscussion" element={<AllDiscussion />} />
+            <Route path="/disease" element={<DiseaseModule />} />
+            <Route path="/home" element={<LoginHome />} />
+            <Route path="/addpost" element={<AddPost />} />
+            <Route path="/adcategory" element={<AdCategory />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/updateprofile" element={<UpdateProfile />} />
+            <Route path="/editname" element={<EditName />} />
+            <Route
+              path="/not-found"
+              element={<h1 className="text-white">Not found</h1>}
+            />
+            <Route
+              path="/access-denied"
+              element={<h1 className="text-white">Not found</h1>}
+            />
+            <Route path="*" element={<Navigate to="/not-found" />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

@@ -7,8 +7,9 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import {
-  ResetPassword,
+  UpdatePassword,
   clearErrors,
   clearMessages,
 } from "./../../../store/actions";
@@ -19,9 +20,10 @@ const Forgotpaswrd = () => {
   const validate = Yup.object({
     email: Yup.string().email("Email is invalid").required("Email is Required"),
   });
+  const { id } = useParams();
   const navigate = useNavigate("");
   const dispatch = useDispatch();
-  const [userMail, setUserMail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
   const { errors, message, loading } = useSelector(
     (state) => state.authReducer
   );
@@ -39,8 +41,8 @@ const Forgotpaswrd = () => {
   }, [errors, message]);
 
   const handleReset = () => {
-    const result = { email: userMail };
-    dispatch(ResetPassword(result));
+    const result = { id, password: newPassword };
+    dispatch(UpdatePassword(result));
   };
   return (
     <>
@@ -48,7 +50,7 @@ const Forgotpaswrd = () => {
         <div className="forget-container-content">
           <img src={Logo} alt="LogoImg" />
           <h2>Mental Health</h2>
-          <h1>Reset Password</h1>
+          <h1>Change Password</h1>
           <Formik
             initialValues={{
               email: "",
@@ -62,18 +64,18 @@ const Forgotpaswrd = () => {
               <div>
                 <Form className="inputfield">
                   <FormInput
-                    name="email"
-                    type="email"
-                    place="Enter your email"
-                    value={userMail}
-                    onChange={(e) => setUserMail(e.target.value)}
+                    name="newPassword"
+                    type="password"
+                    place="Enter your newPassword"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
                   />
                 </Form>
               </div>
             )}
           </Formik>
           <button onClick={() => handleReset()}>
-            {loading ? "Getting Email..." : "Get Email"}
+            {loading ? "Updating..." : "Update"}
           </button>
         </div>
       </div>

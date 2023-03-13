@@ -129,6 +129,78 @@ export const addPost = (body) => {
     }
   };
 };
+
+export const Logout = () => {
+  return async (dispatch) => {
+    dispatch({ type: authConstant.USER_REGISTER_REQUEST });
+    try {
+      localStorage.clear();
+      dispatch({
+        type: authConstant.USER_REGISTER_SUCCESS,
+        payload: "Logout Successfully!",
+      });
+    } catch (error) {
+      dispatch({
+        type: authConstant.USER_REGISTER_FAILURE,
+        payload: { err: error.response.data.message },
+      });
+    }
+  };
+};
+
+export const ResetPassword = (body) => {
+  return async (dispatch) => {
+    dispatch({ type: authConstant.USER_REGISTER_REQUEST });
+    try {
+      const token = localStorage.getItem("userToken");
+      await axios.post(
+        `${process.env.REACT_APP_ROOT}/user/resetPassword`,
+        body,
+        {
+          headers: {
+            Authorization: token ? `Bearer ${token}` : "", //the token is a variable which holds the token
+          },
+        }
+      );
+      dispatch({
+        type: authConstant.USER_REGISTER_SUCCESS,
+        payload: "Please check your mail",
+      });
+    } catch (error) {
+      dispatch({
+        type: authConstant.USER_REGISTER_FAILURE,
+        payload: { err: error.response.data.message },
+      });
+    }
+  };
+};
+
+export const UpdatePassword = (body) => {
+  return async (dispatch) => {
+    dispatch({ type: authConstant.USER_REGISTER_REQUEST });
+    try {
+      const token = localStorage.getItem("userToken");
+      await axios.post(
+        `${process.env.REACT_APP_ROOT}/user/forgetPassword`,
+        body,
+        {
+          headers: {
+            Authorization: token ? `Bearer ${token}` : "", //the token is a variable which holds the token
+          },
+        }
+      );
+      dispatch({
+        type: authConstant.USER_REGISTER_SUCCESS,
+        payload: "Password Updated Successfully",
+      });
+    } catch (error) {
+      dispatch({
+        type: authConstant.USER_REGISTER_FAILURE,
+        payload: { err: error.response.data.message },
+      });
+    }
+  };
+};
 // Clearing Errors
 export const clearErrors = () => async (dispatch) => {
   dispatch({ type: authConstant.CLEAR_ERRORS });

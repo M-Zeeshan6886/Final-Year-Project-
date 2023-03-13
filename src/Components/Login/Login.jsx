@@ -34,7 +34,7 @@ const Login = () => {
       setTimeout(() => navigate("/home"), 2000);
     }
   }, [errors, message]);
-  
+
   return (
     <>
       <div className="signin">
@@ -89,9 +89,12 @@ const Login = () => {
                             {loading ? "Loging..." : "Log IN"}
                           </button>
                         </center>
-                        <a href="#" className="frgt-pswrd">
+                        <Link to="/forgetpassword" className="frgt-pswrd">
                           Forget Your Password!?
-                        </a>
+                        </Link>
+                        <Link to="/signup" className="frgt-pswrd">
+                          Signup?
+                        </Link>
                       </div>
                     </Form>
                   </div>
