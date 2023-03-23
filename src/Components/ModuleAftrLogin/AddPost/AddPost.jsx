@@ -60,7 +60,7 @@ const AddPost = () => {
                 {categories.length > 0 ? (
                   categories.map((item, ind) => {
                     return (
-                      <option value={item.id} key={ind}>
+                      <option value={item.name} key={ind}>
                         {item.name}
                       </option>
                     );

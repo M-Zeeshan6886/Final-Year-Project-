@@ -2,6 +2,7 @@ import { authConstant } from "../constants";
 
 const initialState = {
   message: "",
+  discData: [],
   categories: [],
   products: [],
   errors: [],
@@ -12,6 +13,7 @@ const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case authConstant.USER_LOGIN_REQUEST:
     case authConstant.USER_REGISTER_REQUEST:
+    case authConstant.GET_DIS_REQUEST:
       return {
         ...state,
         loading: true,
@@ -31,6 +33,12 @@ const authReducer = (state = initialState, action) => {
         loading: false,
         categories: action.payload,
       };
+    case authConstant.GET_DIS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        discData: action.payload,
+      };
     case authConstant.GET_ALL_PRODUCT_SUCCESS:
       return {
         ...state,
@@ -39,6 +47,7 @@ const authReducer = (state = initialState, action) => {
       };
     case authConstant.USER_LOGIN_FAILURE:
     case authConstant.USER_REGISTER_FAILURE:
+    case authConstant.GET_DIS_FAILURE:
       return {
         ...state,
         loading: false,
