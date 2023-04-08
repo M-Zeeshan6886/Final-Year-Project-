@@ -1,5 +1,5 @@
-@import '../../scss/mixin';
-@import '../../scss/variables.scss';
+@import "../../scss/mixin";
+@import "../../scss/variables.scss";
 .SignUp {
   height: 100vh;
   &-container {
@@ -40,7 +40,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-  // background-color: aqua;
+      // background-color: aqua;
 
       @include respond(phone) {
         width: 100%;
@@ -92,49 +92,53 @@
     }
   }
 }
-.login-txt{
+.login-txt {
   color: white;
   align-items: center;
   margin-top: 1rem;
   font-size: 2rem;
 }
-.login-btn{
+.login-btn {
   color: gray;
   text-decoration: none;
   font-size: 1.5rem;
-  border:1px solid gray;
-  border-radius: .5rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
   // margin-bottom: 2rem;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   // background-color: lightgrey;
   // text-shadow: 5px 5px 3px rgb(186, 185, 185);
 }
-.login-btn:hover{
-background-color: $blue;
-color:white;
-border: none;
+.login-btn:hover {
+  background-color: $blue;
+  color: white;
+  border: none;
   // text-decoration: underline;
 }
 // #btn3{
 //   align-items: center;
 //   // margin-top: 1rem;
 // }
-.create-acc{
+.create-acc {
   margin-top: 1rem;
   font-size: 1.5rem;
-  padding: .7rem 1rem;
+  padding: 0.7rem 1rem;
   border: none;
-  border-radius: .7rem;
+  border-radius: 0.7rem;
   color: white;
-  background-color: #2041CA;
+  background-color: #2041ca;
   // width: auto;
-  
+
   text-decoration: none;
 }
-.create-acc:hover{
-  font-weight:600 ;
-  color: #2041CA;
+.create-acc:hover {
+  font-weight: 600;
+  color: #2041ca;
   background-color: white;
-  border:1px solid #2041CA;
-  transition: .5s ease-in-out;
+  border: 1px solid #2041ca;
+  transition: 0.5s ease-in-out;
+}
+
+.signup-loginbtn {
+  color: white;
 }

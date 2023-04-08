@@ -49,11 +49,15 @@ const SignUp = () => {
           <div className="SignUp-container-left">
             <div className="SignUp-container-left-content">
               <h1 className="SignUp-container-left-content-heading">
-                Wellcome Back!
+                Wellcome to the
+                <br />
+                Mental Health!
               </h1>
               <center>
                 <p className="login-txt">
-                  Log-in to your account to access the Mental Health Forums.
+                  If you have already signup account then move to
+                  <Link to="/" className="signup-loginbtn"> login </Link>
+                  page.
                 </p>
               </center>
             </div>
@@ -78,7 +82,7 @@ const SignUp = () => {
                 {(formik) => (
                   <div>
                     <center>
-                      {/* <Link to="/login" className="login-btn">
+                      {/* <Link to="/" className="login-btn">
                         Login
                       </Link> */}
                     </center>

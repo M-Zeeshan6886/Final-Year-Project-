@@ -1,5 +1,5 @@
-@import '../../scss/mixin';
-@import '../../scss/variables.scss';
+@import "../../scss/mixin";
+@import "../../scss/variables.scss";
 .signin {
   height: 100vh;
   &-container {
@@ -39,7 +39,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-  // background-color: aqua;
+      // background-color: aqua;
 
       @include respond(phone) {
         width: 100%;
@@ -90,32 +90,50 @@
     }
   }
 }
-.login-txt{
+.login-txt {
   color: white;
   align-items: center;
   margin-top: 1rem;
   font-size: 2rem;
 }
-.chckbx-text{
+.chckbx-text {
   color: black;
 }
-.frgt-pswrd a{
+.frgt-pswrd {
   margin-top: 3rem;
   font-size: 1.5rem;
-  @include respond(phone){
+  // background-color: palevioletred;
+  @include respond(phone) {
     margin-top: 2rem;
   }
 }
-.frgt-pswrd:hover{
+.frgt-pswrd:hover {
   font-weight: 500;
 }
 
-.login-btn2{
-  padding: .5rem 1rem;
+.login-btn2 {
+  padding: 0.5rem 1rem;
   font-size: 1.5rem;
   text-decoration: none;
   background-color: $blue;
   color: white;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
+}
+.signup-container {
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: right;
+  padding: 0.5rem 0rem;
+  // background-color: lightcoral;
+  &-signupbtn {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

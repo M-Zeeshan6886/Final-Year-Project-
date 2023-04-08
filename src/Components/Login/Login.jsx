@@ -47,6 +47,8 @@ const Login = () => {
               <center>
                 <p className="login-txt">
                   Log-in to your account to access the Mental Health Forums.
+                   <br/>
+                   If you dn't h've any account then click on Create Account.
                 </p>
               </center>
             </div>
@@ -67,7 +69,7 @@ const Login = () => {
                   <div>
                     <Form className="signin-container-right-form-signin">
                       <FormInput
-                        label="Enter your username"
+                        label="Email"
                         name="email"
                         type="email"
                         place="Enter your email"
@@ -92,14 +94,19 @@ const Login = () => {
                         <Link to="/forgetpassword" className="frgt-pswrd">
                           Forget Your Password!?
                         </Link>
-                        <Link to="/signup" className="frgt-pswrd">
+                        {/* <Link to="/signup" className="frgt-pswrd">
                           Signup?
-                        </Link>
+                        </Link> */}
                       </div>
                     </Form>
                   </div>
                 )}
               </Formik>
+            </div>
+            <div className="signup-container">
+              <Link to="/signup" className="signup-container-signupbtn">
+                Create Account ?
+              </Link>
             </div>
           </div>
         </div>

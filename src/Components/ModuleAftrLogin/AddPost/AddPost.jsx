@@ -77,6 +77,19 @@ const AddPost = () => {
                 onChange={(content) => {
                   setValue(content);
 
+                  // const text = content;
+                  // const data = document.createElement("div");
+                  // data.innerHTML = text;
+                  // const para = data.textContent || data.innerText || "";
+                  // console.log(para);
+                }}
+                setValue={setValue}
+              />
+              <input
+                ref={editor}
+                onChange={(content) => {
+                  setValue(content);
+
                   const text = content;
                   const data = document.createElement("div");
                   data.innerHTML = text;
