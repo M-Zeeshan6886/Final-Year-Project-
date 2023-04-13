@@ -22,10 +22,7 @@ const Mainbody = () => {
       toast.error(errors);
       dispatch(clearErrors());
     }
-    if (discData.length > 0) {
-      setTimeout(() => navigate("/alldiscussion"), 2000);
-    }
-  }, [discData]);
+  }, []);
   return (
     <>
       <div className="mainbody-container">
@@ -71,7 +68,10 @@ const Mainbody = () => {
               <div className="mainbody-container-one-dcard1-content-viewmore">
                 <p
                   className="btn"
-                  onClick={() => dispatch(getDisccsuion("Anxiety"))}
+                  onClick={() => {
+                    dispatch(getDisccsuion("Anxiety"));
+                    navigate("/alldiscussion/Anxiety");
+                  }}
                 >
                   {loading ? "loading..." : "View more.."}
                 </p>
@@ -93,6 +93,7 @@ const Mainbody = () => {
                   className="btn"
                   onClick={() => {
                     dispatch(getDisccsuion("Depression"));
+                    navigate("/alldiscussion/Depression");
                   }}
                 >
                   {loading ? "loading..." : "View more.."}
@@ -118,7 +119,10 @@ const Mainbody = () => {
               <div className="mainbody-container-one-dcard1-content-viewmore">
                 <p
                   className="btn"
-                  onClick={() => dispatch(getDisccsuion("PTSD and trauma"))}
+                  onClick={() => {
+                    dispatch(getDisccsuion("PTSD and trauma"));
+                    navigate("/alldiscussion/PTSD and trauma");
+                  }}
                 >
                   {loading ? "loading..." : "View more.."}
                 </p>
@@ -138,7 +142,10 @@ const Mainbody = () => {
               <div className="mainbody-container-one-dcard1-content-viewmore">
                 <p
                   className="btn"
-                  onClick={() => dispatch(getDisccsuion("PTSD and trauma"))}
+                  onClick={() => {
+                    dispatch(getDisccsuion("Suicidal thoughts and self-harm"));
+                    navigate("/alldiscussion/Suicidal thoughts and self-harm");
+                  }}
                 >
                   {loading ? "loading..." : "View more.."}
                 </p>

@@ -48,7 +48,10 @@ const Router = () => {
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Homebefor />} />
             <Route path="/help" element={<FGuideline />} />
-            <Route path="/alldiscussion" element={<AllDiscussion />} />
+            <Route
+              path="/alldiscussion/:category"
+              element={<AllDiscussion />}
+            />
             <Route path="/disease" element={<DiseaseModule />} />
             <Route path="/home" element={<LoginHome />} />
             <Route path="/addpost" element={<AddPost />} />

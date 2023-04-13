@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavbarOne from "../../../Common Components/Navbar/Navbarbefor";
 import Adheader from "./Ad-Header/Ad-header";
 import Hphoto from "../../../Components/assest/headerimg3.JPG";
@@ -7,14 +7,30 @@ import StartDiscussion from "../../Start-discussion/StartDiscussion";
 import AdComnt from "./Adcomntbox/AdComnt";
 import profileimg from "../../assest/profileimg.png";
 import Footer from "../../../Common Components/Footer/Footer";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { useParams } from "react-router-dom";
+import {
+  getAllProduct,
+  getDisccsuion,
+  clearErrors,
+  clearMessages,
+} from "./../../../store/actions";
 
 const AllDiscussion = () => {
+  const dispatch = useDispatch();
+  const { category } = useParams();
   const { errors, message, discData, loading } = useSelector(
     (state) => state.authReducer
   );
 
-  console.log("disData is", discData);
+  useEffect(() => {
+    if (errors.length > 0) {
+      toast.error(errors);
+      dispatch(clearErrors());
+    }
+    dispatch(getDisccsuion(category));
+  }, []);
   return (
     <>
       <NavbarOne />
