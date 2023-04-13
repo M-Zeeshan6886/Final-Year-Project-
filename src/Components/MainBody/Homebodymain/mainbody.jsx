@@ -60,10 +60,12 @@ const Mainbody = () => {
               <span>Forum</span>
               <hr />
               <h1>Anxiety</h1>
-              <p>Anxiety Body</p>
+              <p>Anxiety is the most common menal health condition in the world. share
+                your own story and learn about othe rmember's experiences with anxiety.
+              </p>
               <div className="mainbody-container-one-dcard1-content-lower1">
-                <span>Discussions</span>
-                <p>3456</p>
+                {/* <span>Discussions</span>
+                <p>3456</p> */}
               </div>
               <div className="mainbody-container-one-dcard1-content-viewmore">
                 <p
@@ -83,10 +85,10 @@ const Mainbody = () => {
               <span>Forum</span>
               <hr />
               <h1>Depression</h1>
-              <p>Depression Body</p>
+              <p>Depression affects people in all over the world every day. Share your own story and learn about othe rmember's ecperiences with depression. </p>
               <div className="mainbody-container-one-dcard1-content-lower1">
-                <span>Discussions</span>
-                <p>3456</p>
+                {/* <span>Discussions</span>
+                <p>3456</p> */}
               </div>
               <div className="mainbody-container-one-dcard1-content-viewmore">
                 <p
@@ -111,10 +113,10 @@ const Mainbody = () => {
               <span>Forum</span>
               <hr />
               <h1>PTSD and trauma</h1>
-              <p>PTSD and trauma</p>
+              <p>A space for discussing post-traumatic stress disorder(PTSD), domestic abuse, sexual abuse and other trauma. Please note some content may be distressing.</p>
               <div className="mainbody-container-one-dcard1-content-lower1">
-                <span>Discussions</span>
-                <p>3456</p>
+                {/* <span>Discussions</span>
+                <p>3456</p> */}
               </div>
               <div className="mainbody-container-one-dcard1-content-viewmore">
                 <p
@@ -134,10 +136,10 @@ const Mainbody = () => {
               <span>Forum</span>
               <hr />
               <h1>Suicidal thoughts and self-harm</h1>
-              <p>Suicidal thoughts and self-harm Body</p>
+              <p>This space for discusses about Suicidal and self-harm(SASH). Consider limiting the time you spend here. To use the section safely, read the discussion.</p>
               <div className="mainbody-container-one-dcard1-content-lower1">
-                <span>Discussions</span>
-                <p>3456</p>
+                {/* <span>Discussions</span>
+                <p>3456</p> */}
               </div>
               <div className="mainbody-container-one-dcard1-content-viewmore">
                 <p

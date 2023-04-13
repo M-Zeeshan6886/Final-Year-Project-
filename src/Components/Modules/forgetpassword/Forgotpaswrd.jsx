@@ -72,7 +72,7 @@ const Forgotpaswrd = () => {
               </div>
             )}
           </Formik>
-          <button onClick={() => handleReset()}>
+          <button onClick={() => handleReset()} className="getmail">
             {loading ? "Getting Email..." : "Get Email"}
           </button>
         </div>
